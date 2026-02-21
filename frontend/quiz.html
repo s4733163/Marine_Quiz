@@ -209,7 +209,6 @@
 
         <div class="toolbar">
           <button id="startBtn">Start Assessment</button>
-          <button id="studyBtn" class="secondary">Study Guide</button>
           <div class="status" id="startHint">Fill name + email, then start.</div>
         </div>
       </div>
@@ -287,35 +286,6 @@
           <h3 style="margin:14px 0 8px;">Review (Your Answer vs Correct Answer)</h3>
           <div id="reviewArea" class="review"></div>
         </div>
-      </div>
-
-      <!-- STUDY GUIDE SCREEN -->
-      <div id="studyScreen">
-        <div class="sgHeader">
-          <div>
-            <h2>Study Guide — Question Bank</h2>
-            <p>All questions and answers organised by section</p>
-          </div>
-          <button id="sgBackBtn" style="background:rgba(255,255,255,.18);color:#fff;font-size:13px;padding:8px 16px;">
-            ← Back
-          </button>
-        </div>
-
-        <div class="sgRankBar">
-          <label for="sgRankSelect">Rank:</label>
-          <select id="sgRankSelect">
-            <option value="Deck Rating (AB/OS)">Deck Rating (AB/OS)</option>
-            <option value="Master">Master</option>
-            <option value="Chief Engineer">Chief Engineer</option>
-            <option value="Chief Officer">Chief Officer</option>
-            <option value="2nd Engineer">2nd Engineer</option>
-          </select>
-          <button class="sgExpandAll" id="sgExpandAllBtn">Expand All</button>
-          <button class="sgExpandAll" id="sgCollapseAllBtn">Collapse All</button>
-        </div>
-
-        <div id="sgStats" class="sgStats"></div>
-        <div id="sgBody"></div>
       </div>
 
     </div>
