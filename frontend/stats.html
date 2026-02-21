@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>24SEAFARERS ACADEMY — Admin Dashboard</title>
+  <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+
+  <!-- Header (always visible) -->
+  <div class="header" id="pageHeader">
+    <div class="hbrand">
+      <div class="hicon">⚓</div>
+      <div>
+        <h1>24SEAFARERS ACADEMY</h1>
+        <p>Admin Dashboard — All Users Statistics</p>
+      </div>
+    </div>
+    <div class="hadmin" id="adminInfo" style="display:none;">
+      <span id="adminLabel"></span>
+      <button id="logoutBtn">Sign out</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- LOGIN -->
+    <div id="loginView" class="card">
+      <h2>Admin Login</h2>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="admin@example.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password" />
+      </div>
+      <button class="btn" id="loginBtn">Login</button>
+      <div class="hint" id="loginHint">Enter admin email and password.</div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashView">
+
+      <!-- Summary cards -->
+      <div class="summary" id="summaryRow"></div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <input id="searchInput" type="text" placeholder="Search by name or email…" />
+        <select id="rankFilter"><option value="">All Ranks</option></select>
+        <span class="count" id="userCount"></span>
+      </div>
+
+      <!-- User list -->
+      <div id="userList"></div>
+    </div>
+  </div>
+  <script src="stats.js"></script>
+</body>
+</html>
