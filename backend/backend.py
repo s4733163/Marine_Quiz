@@ -20,6 +20,9 @@ supabase = create_client(url, key)
 app = Flask(__name__)
 CORS(app)  # Allow all origins (works for file://, any local server port)
 
+
+# everytime we do a supabase operation use try catch to catch the api error that can 
+# be returned in the json and makes code more neat
 @app.route("/check_credentials", methods=["POST"])
 def check():
     data = request.get_json(force=True) or {}
@@ -123,6 +126,8 @@ def create_score():
         return jsonify({"ok": False, "message": "email and rank are required"}), 400
 
     #  Get user_id from email
+    # this returns a list of rows
+    # list can be made of a single row only as well
     try:
         uresp = (
             supabase.table("app_users")
@@ -133,7 +138,8 @@ def create_score():
         )
     except APIError as e:
         return jsonify({"ok": False, "message": "Database error (user lookup)", "detail": str(e)}), 500
-
+    
+    # if the data does not exist
     if not (uresp.data or []):
         return jsonify({"ok": False, "message": "User not found for this email"}), 404
 
@@ -399,6 +405,7 @@ def get_stats():
         "users":         result_users
     }), 200
 
+# used to check that the api is active or not
 @app.get("/health")
 def health():
     return {"status": "ok"}, 200
