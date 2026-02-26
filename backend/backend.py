@@ -399,7 +399,7 @@ def get_stats():
     return jsonify({
         "ok":            True,
         "admin":         {"username": admin["username"], "email": admin["email"]},
-        "total_users":   len(result_users),
+        "total_users":   len(user_map),
         "total_attempts": total_attempts,
         "total_passes":  total_passes,
         "users":         result_users
